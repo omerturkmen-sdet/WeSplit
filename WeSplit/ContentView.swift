@@ -14,23 +14,33 @@ struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
     @State private var tipPercentage = 20
-    let tipPercentages = [0,10, 15, 20, 25]
+    let tipPercentages = 0..<101
     @FocusState private var amountIsFocused: Bool
     
     var totalPerPerson: Double{
         let peopleCount = Double(numberOfPeople)
+        return totalAmount / peopleCount
+    }
+    
+    var totalAmount: Double{
         let tipSelection = Double(tipPercentage)
         let tipValue = checkAmount / 100 * tipSelection
         let grandTotal = checkAmount + tipValue
-        let amountPerPerson = grandTotal / peopleCount
-        return amountPerPerson
+        return grandTotal
+    }
+    
+    let localCurrency: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currency?.identifier ?? "USD")
+    
+    var dollarFormat: FloatingPointFormatStyle<Double>.Currency {
+        let currencyCode = Locale.current.currency?.identifier ?? "USD"
+        return FloatingPointFormatStyle<Double>.Currency(code: currencyCode)
     }
     
     var body: some View {
         NavigationView{
             Form{
                 Section{
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    TextField("Amount", value: $checkAmount, format: localCurrency)
                     //                    .keyboardType(.numberPad)
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused)
@@ -48,7 +58,7 @@ struct ContentView: View {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.navigationLink)
                     
 //                    .pickerStyle(.inline)             // Like form format
 //                    .pickerStyle(.menu)               // Opening menu to pick
@@ -61,7 +71,15 @@ struct ContentView: View {
                 }
                 
                 Section{
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalAmount, format: dollarFormat)
+                } header: {
+                    Text("Total amount")
+                }
+                
+                Section{
+                    Text(totalPerPerson, format: localCurrency)
+                } header: {
+                    Text("Amount per person")
                 }
             }
             .navigationTitle("WeSplit")
