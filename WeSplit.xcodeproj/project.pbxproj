@@ -15,6 +15,7 @@
 		A2BC3D1829EF505A007C296A /* BindingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC3D1729EF505A007C296A /* BindingState.swift */; };
 		A2BC3D1A29EF5200007C296A /* ViewsInLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC3D1929EF5200007C296A /* ViewsInLoop.swift */; };
 		A2D9A9AC29EFFA3300F6B4AB /* NavigationViewUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9A9AB29EFFA3300F6B4AB /* NavigationViewUsage.swift */; };
+		A2D9AA1C29F876A900F6B4AB /* Day24Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9AA1B29F876A900F6B4AB /* Day24Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A2BC3D1729EF505A007C296A /* BindingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingState.swift; sourceTree = "<group>"; };
 		A2BC3D1929EF5200007C296A /* ViewsInLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsInLoop.swift; sourceTree = "<group>"; };
 		A2D9A9AB29EFFA3300F6B4AB /* NavigationViewUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewUsage.swift; sourceTree = "<group>"; };
+		A2D9AA1B29F876A900F6B4AB /* Day24Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day24Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				A2BC3D1729EF505A007C296A /* BindingState.swift */,
 				A2BC3D1929EF5200007C296A /* ViewsInLoop.swift */,
 				A2D9A9AB29EFFA3300F6B4AB /* NavigationViewUsage.swift */,
+				A2D9AA1B29F876A900F6B4AB /* Day24Challenge.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D9AA1C29F876A900F6B4AB /* Day24Challenge.swift in Sources */,
 				A2D9A9AC29EFFA3300F6B4AB /* NavigationViewUsage.swift in Sources */,
 				A2BC3D0A29EF43ED007C296A /* ContentView.swift in Sources */,
 				A2BC3D1829EF505A007C296A /* BindingState.swift in Sources */,
